@@ -45,5 +45,22 @@ namespace POS
             LoginForm lf = new LoginForm();
             lf.Show();
         }
+
+        private void menuItem_AddNewProducts_Click(object sender, EventArgs e)
+        {
+            frm_Products prod = new frm_Products();
+            prod.ShowDialog();
+        }
+
+        private void menuItem_ViewProducts_Click(object sender, EventArgs e)
+        {
+            frm_ViewProducts vp = new frm_ViewProducts();
+            vp.Show();
+        }
+
+        private void btn_Search_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

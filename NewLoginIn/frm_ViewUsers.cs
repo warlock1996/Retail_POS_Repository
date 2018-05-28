@@ -20,18 +20,29 @@ namespace POS
 
         private void frm_ViewUsers_Load(object sender, EventArgs e)
         {
-            ConnectionManager cm = new ConnectionManager();
-            cm.con_Open();
-            DataTable getds = cm.con_DataTable();
+            try {
 
-            for (int i =0 ; i < getds.Rows.Count ; i++)
+                ConnectionManager cm_vu = new ConnectionManager();
+                string query_vu = "SELECT [UserName],[Password],[AccessLevel] FROM tbl_users";
+                cm_vu.con_Open();
+                DataTable getds = cm_vu.con_DataTable(query_vu);
+
+                for (int i = 0; i < getds.Rows.Count; i++)
+                {
+                    DataRow dr = getds.Rows[i];
+
+                    ListViewItem lvi = new ListViewItem(dr["UserName"].ToString());
+                    lvi.SubItems.Add(dr["Password"].ToString());
+                    lvi.SubItems.Add(dr["AccessLevel"].ToString());
+                    lv_ViewUsers.Items.Add(lvi);
+
+                }
+                cm_vu.con_Close();
+            }
+
+            catch(SqlException se)
             {
-                DataRow dr = getds.Rows[i];
-
-                ListViewItem lvi = new ListViewItem(dr["user"].ToString());
-                lvi.SubItems.Add(dr["password"].ToString());
-                lv_ViewUsers.Items.Add(lvi);
-
+                MessageBox.Show(se.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }

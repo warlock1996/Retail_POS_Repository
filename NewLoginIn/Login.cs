@@ -15,7 +15,7 @@ namespace POS
     public partial class LoginForm : Form
     {
 
-       
+
         public LoginForm()
         {
             InitializeComponent();
@@ -24,24 +24,23 @@ namespace POS
         private void LoginForm_Load(object sender, EventArgs e)
         {
             txt_ConLbl.Text = "Connected";
-            txt_ConLbl.ForeColor = Color.Green; 
+            txt_ConLbl.ForeColor = Color.Green;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+
             try
             {
-                MD5CryptoServiceProvider md5pwd = new MD5CryptoServiceProvider();
-               
+                 MD5CryptoServiceProvider md5pwd = new MD5CryptoServiceProvider();
+
                 string txtUser = txtUserName.Text;
                 string txtPwd = BitConverter.ToString(md5pwd.ComputeHash(Encoding.ASCII.GetBytes(txtPassword.Text)));
+                
+                users newuser = new users(txtUser, txtPwd);
 
 
-                users newuser = new users(txtUser,txtPwd);
-
-               
-                if (newuser.Validate())
+                    if (newuser.Validate()) 
                 {
                     pb_login.Value += 100;
                     if (pb_login.Value > 99)
@@ -51,25 +50,25 @@ namespace POS
                         frm_Home myhome = new frm_Home();
                         myhome.Show();
                     }
-                    
-                   
+
+
                 }
                 else
                 {
-                    MessageBox.Show("Invalid Credentials ! ", "Authentication Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    MessageBox.Show("Invalid Credentials ! ", "Authentication Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txtUserName.Text = "";
                     txtPassword.Text = "";
                     txtUserName.Focus();
-                 
+
                 }
             }
             catch (SqlException se)
             {
                 MessageBox.Show(se.ToString());
             }
+        }
 
-         
-      }
+
         private void txtUserName_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyValue == 13)

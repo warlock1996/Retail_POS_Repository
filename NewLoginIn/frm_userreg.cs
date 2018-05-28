@@ -31,13 +31,15 @@ namespace POS
                 MessageBox.Show("Please Specify A Password !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else if (txt_Password.Text != txt_ConfirmPassword.Text)
                 MessageBox.Show("Password Do Not Match !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else if(cb_AccessLevel.Text=="")
+                MessageBox.Show("Please Specify A User Role !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else if ((txt_UserName.Text == "") && (txt_Password.Text == "") && (txt_ConfirmPassword.Text == ""))
                 MessageBox.Show("Please Specify User Information !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
                 MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
                 string password = BitConverter.ToString(md5.ComputeHash(Encoding.ASCII.GetBytes(txt_ConfirmPassword.Text)));
-                myUserreg = new UserReg(txt_UserName.Text, password);
+                myUserreg = new UserReg(txt_UserName.Text, password, cb_AccessLevel.Text);
                 if (myUserreg.addNewUser())
                     MessageBox.Show("User Added Successfully !");
                 else

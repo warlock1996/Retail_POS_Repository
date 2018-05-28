@@ -23,7 +23,7 @@ namespace POS
         public bool Validate()
         {
 
-            Command = " SELECT * FROM tbl_admin WHERE [user] = '" + UserName + "' AND [password] = '" + PassWord + "' ";
+            Command = " SELECT * FROM tbl_users WHERE [UserName] = '" + UserName + "' AND [Password] = '" + PassWord + "' ";
             ConnectionManager myconn = new ConnectionManager();
             myconn.con_Open();
             SqlDataReader rdr = myconn.con_Reader(Command);

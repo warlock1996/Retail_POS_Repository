@@ -126,13 +126,13 @@
             // txt_Status
             // 
             this.txt_Status.Name = "txt_Status";
-            this.txt_Status.Size = new System.Drawing.Size(45, 17);
+            this.txt_Status.Size = new System.Drawing.Size(45, 15);
             this.txt_Status.Text = "Status :";
             // 
             // txt_ConLbl
             // 
             this.txt_ConLbl.Name = "txt_ConLbl";
-            this.txt_ConLbl.Size = new System.Drawing.Size(79, 17);
+            this.txt_ConLbl.Size = new System.Drawing.Size(79, 15);
             this.txt_ConLbl.Text = "Disconnected";
             // 
             // button2
@@ -162,7 +162,7 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(353, 189);
+            this.pictureBox1.Size = new System.Drawing.Size(353, 205);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;

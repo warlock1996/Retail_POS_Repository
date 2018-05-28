@@ -40,10 +40,9 @@ namespace POS
                 return sdr;
             
         }
-        public DataTable con_DataTable()
+        public DataTable con_DataTable(string _readdatatable)
         {
-            string Command = "SELECT [user],[password] FROM tbl_admin";
-            SqlDataAdapter sda = new SqlDataAdapter(Command,sc);
+            SqlDataAdapter sda = new SqlDataAdapter(_readdatatable,sc);
             DataTable dt = new DataTable();
             sda.Fill(dt);
             return dt;

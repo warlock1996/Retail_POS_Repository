@@ -11,18 +11,20 @@ namespace POS
     {
         private string username;
         private string password;
+        private string accesslevel;
         ConnectionManager myconn;
-        public UserReg(string un, string ps)
+        public UserReg(string un, string ps, string al)
         {
             username = un;
             password = ps;
+            accesslevel = al;
         }
         public UserReg()
         { }
         public bool addNewUser()
         {
             myconn = new ConnectionManager();
-            string addusercommand = "INSERT INTO tbl_admin ([user],[password]) VALUES ('" + username + "','" + password + "')";
+            string addusercommand = "INSERT INTO tbl_users ([UserName],[Password],[AccessLevel]) VALUES ('" + username + "','" + password + "','"+ accesslevel +"')";
             myconn.con_Open();
             if (myconn.con_Query(addusercommand))
                 return true;
@@ -34,7 +36,7 @@ namespace POS
         {
 
             myconn = new ConnectionManager();
-            string lookupusercommand = "SELECT * FROM tbl_admin WHERE [user] = '" + lookupuser + "'";
+            string lookupusercommand = "SELECT * FROM tbl_users WHERE [UserName] = '" + lookupuser + "'";
             myconn.con_Open();
             SqlDataReader lkuprdr = myconn.con_Reader(lookupusercommand);
             if (lkuprdr.HasRows)
