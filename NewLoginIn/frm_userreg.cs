@@ -40,11 +40,20 @@ namespace POS
                 MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
                 string password = BitConverter.ToString(md5.ComputeHash(Encoding.ASCII.GetBytes(txt_ConfirmPassword.Text)));
                 myUserreg = new UserReg(txt_UserName.Text, password, cb_AccessLevel.Text);
-                if (myUserreg.addNewUser())
-                    MessageBox.Show("User Added Successfully !");
+                if (myUserreg.UserCounter())
+                {
+                    if (myUserreg.addNewUser())
+                        MessageBox.Show("User Added Successfully !","Success",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    else
+                        MessageBox.Show("Failed To Add New User !","Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
                 else
-                    MessageBox.Show("Failed To Add New User !");
-            }
+                {
+                    MessageBox.Show("More Users Cannot Be Added !", "Users Limit Reached", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                }
+               
+
+                }
 
         }
 

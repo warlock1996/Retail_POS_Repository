@@ -53,15 +53,15 @@
             this.slbl_Home = new System.Windows.Forms.ToolStripStatusLabel();
             this.slblvalue_Home = new System.Windows.Forms.ToolStripStatusLabel();
             this.listView1 = new System.Windows.Forms.ListView();
+            this.lvi_ProductID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lvi_ProductName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lvi_UnitPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lvi_Description = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lvi_OrderDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1 = new System.Windows.Forms.Panel();
             this.txt_Search = new System.Windows.Forms.TextBox();
             this.btn_Search = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.lvi_ProductID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lvi_OrderDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lvi_ProductName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lvi_UnitPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lvi_Description = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lbl_OrderID = new System.Windows.Forms.Label();
             this.txt_H_OrderID = new System.Windows.Forms.TextBox();
             this.txt_H_TotalBill = new System.Windows.Forms.TextBox();
@@ -158,14 +158,14 @@
             // menuItem_ViewUsers
             // 
             this.menuItem_ViewUsers.Name = "menuItem_ViewUsers";
-            this.menuItem_ViewUsers.Size = new System.Drawing.Size(152, 22);
+            this.menuItem_ViewUsers.Size = new System.Drawing.Size(130, 22);
             this.menuItem_ViewUsers.Text = "View Users";
             this.menuItem_ViewUsers.Click += new System.EventHandler(this.menuItem_ViewUsers_Click);
             // 
             // menuItem_AddUsers
             // 
             this.menuItem_AddUsers.Name = "menuItem_AddUsers";
-            this.menuItem_AddUsers.Size = new System.Drawing.Size(152, 22);
+            this.menuItem_AddUsers.Size = new System.Drawing.Size(130, 22);
             this.menuItem_AddUsers.Text = "Add Users";
             this.menuItem_AddUsers.Click += new System.EventHandler(this.menuItem_AddUsers_Click);
             // 
@@ -222,8 +222,9 @@
             // viewUserLogToolStripMenuItem
             // 
             this.viewUserLogToolStripMenuItem.Name = "viewUserLogToolStripMenuItem";
-            this.viewUserLogToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.viewUserLogToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.viewUserLogToolStripMenuItem.Text = "View User Log";
+            this.viewUserLogToolStripMenuItem.Click += new System.EventHandler(this.viewUserLogToolStripMenuItem_Click);
             // 
             // menuItem_LogOut
             // 
@@ -275,6 +276,31 @@
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
             // 
+            // lvi_ProductID
+            // 
+            this.lvi_ProductID.Text = "ProductID";
+            this.lvi_ProductID.Width = 131;
+            // 
+            // lvi_ProductName
+            // 
+            this.lvi_ProductName.Text = "ProductName";
+            this.lvi_ProductName.Width = 164;
+            // 
+            // lvi_UnitPrice
+            // 
+            this.lvi_UnitPrice.Text = "UnitPrice";
+            this.lvi_UnitPrice.Width = 143;
+            // 
+            // lvi_Description
+            // 
+            this.lvi_Description.Text = "ProductDesc";
+            this.lvi_Description.Width = 178;
+            // 
+            // lvi_OrderDate
+            // 
+            this.lvi_OrderDate.Text = "OrderDate";
+            this.lvi_OrderDate.Width = 147;
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.listView1);
@@ -316,31 +342,6 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(130, 23);
             this.comboBox1.TabIndex = 6;
-            // 
-            // lvi_ProductID
-            // 
-            this.lvi_ProductID.Text = "ProductID";
-            this.lvi_ProductID.Width = 131;
-            // 
-            // lvi_OrderDate
-            // 
-            this.lvi_OrderDate.Text = "OrderDate";
-            this.lvi_OrderDate.Width = 147;
-            // 
-            // lvi_ProductName
-            // 
-            this.lvi_ProductName.Text = "ProductName";
-            this.lvi_ProductName.Width = 164;
-            // 
-            // lvi_UnitPrice
-            // 
-            this.lvi_UnitPrice.Text = "UnitPrice";
-            this.lvi_UnitPrice.Width = 143;
-            // 
-            // lvi_Description
-            // 
-            this.lvi_Description.Text = "ProductDesc";
-            this.lvi_Description.Width = 178;
             // 
             // lbl_OrderID
             // 

@@ -62,5 +62,11 @@ namespace POS
         {
 
         }
+
+        private void viewUserLogToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_ViewUserLogs vulgs = new frm_ViewUserLogs();
+            vulgs.Show();
+        }
     }
 }

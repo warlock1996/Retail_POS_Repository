@@ -62,6 +62,12 @@
     <Compile Include="frm_ViewProducts.Designer.cs">
       <DependentUpon>frm_ViewProducts.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_ViewUserLogs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_ViewUserLogs.Designer.cs">
+      <DependentUpon>frm_ViewUserLogs.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_ViewUsers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +102,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_ViewProducts.resx">
       <DependentUpon>frm_ViewProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_ViewUserLogs.resx">
+      <DependentUpon>frm_ViewUserLogs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_ViewUsers.resx">
       <DependentUpon>frm_ViewUsers.cs</DependentUpon>

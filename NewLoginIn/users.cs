@@ -22,6 +22,7 @@ namespace POS
         }
         public bool Validate()
         {
+       
 
             Command = " SELECT * FROM tbl_users WHERE [UserName] = '" + UserName + "' AND [Password] = '" + PassWord + "' ";
             ConnectionManager myconn = new ConnectionManager();

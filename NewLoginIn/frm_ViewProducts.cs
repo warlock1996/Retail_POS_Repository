@@ -36,6 +36,7 @@ namespace POS
 
             }
 
+            vp_con.con_Close();
         }
     }
 }

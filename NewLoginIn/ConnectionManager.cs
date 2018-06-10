@@ -47,6 +47,18 @@ namespace POS
             sda.Fill(dt);
             return dt;
         }
+        public bool con_LookUpUsers(string _username)
+        {
+
+            string _lkupquery = "SELECT [UserName] FROM tbl_users WHERE [UserName] = '" + _username + "'";
+            SqlCommand sclkup = new SqlCommand(_lkupquery,sc);
+            SqlDataReader sdr_lkup = sclkup.ExecuteReader();                
+               if (sdr_lkup.HasRows)
+                return true;
+            else
+                return false;
+
+        }
 
 
     }
