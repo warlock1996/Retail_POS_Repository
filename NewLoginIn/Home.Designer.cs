@@ -52,13 +52,6 @@
             this.ss_Home = new System.Windows.Forms.StatusStrip();
             this.slbl_Home = new System.Windows.Forms.ToolStripStatusLabel();
             this.slblvalue_Home = new System.Windows.Forms.ToolStripStatusLabel();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.lvi_ProductID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lvi_ProductName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lvi_UnitPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lvi_Description = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lvi_OrderDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.panel1 = new System.Windows.Forms.Panel();
             this.txt_Search = new System.Windows.Forms.TextBox();
             this.btn_Search = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -73,7 +66,6 @@
             this.p_Home = new System.Windows.Forms.Panel();
             this.menu_Home.SuspendLayout();
             this.ss_Home.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menu_Home
@@ -222,7 +214,7 @@
             // viewUserLogToolStripMenuItem
             // 
             this.viewUserLogToolStripMenuItem.Name = "viewUserLogToolStripMenuItem";
-            this.viewUserLogToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.viewUserLogToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.viewUserLogToolStripMenuItem.Text = "View User Log";
             this.viewUserLogToolStripMenuItem.Click += new System.EventHandler(this.viewUserLogToolStripMenuItem_Click);
             // 
@@ -257,58 +249,6 @@
             this.slblvalue_Home.Name = "slblvalue_Home";
             this.slblvalue_Home.Size = new System.Drawing.Size(0, 17);
             // 
-            // listView1
-            // 
-            this.listView1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.lvi_ProductID,
-            this.lvi_ProductName,
-            this.lvi_UnitPrice,
-            this.lvi_Description,
-            this.lvi_OrderDate});
-            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listView1.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.listView1.GridLines = true;
-            this.listView1.Location = new System.Drawing.Point(0, 0);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(767, 403);
-            this.listView1.TabIndex = 2;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            // 
-            // lvi_ProductID
-            // 
-            this.lvi_ProductID.Text = "ProductID";
-            this.lvi_ProductID.Width = 131;
-            // 
-            // lvi_ProductName
-            // 
-            this.lvi_ProductName.Text = "ProductName";
-            this.lvi_ProductName.Width = 164;
-            // 
-            // lvi_UnitPrice
-            // 
-            this.lvi_UnitPrice.Text = "UnitPrice";
-            this.lvi_UnitPrice.Width = 143;
-            // 
-            // lvi_Description
-            // 
-            this.lvi_Description.Text = "ProductDesc";
-            this.lvi_Description.Width = 178;
-            // 
-            // lvi_OrderDate
-            // 
-            this.lvi_OrderDate.Text = "OrderDate";
-            this.lvi_OrderDate.Width = 147;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.listView1);
-            this.panel1.Location = new System.Drawing.Point(0, 64);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(767, 403);
-            this.panel1.TabIndex = 3;
-            // 
             // txt_Search
             // 
             this.txt_Search.BackColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -324,7 +264,6 @@
             this.btn_Search.Name = "btn_Search";
             this.btn_Search.Size = new System.Drawing.Size(105, 24);
             this.btn_Search.TabIndex = 5;
-            this.btn_Search.Text = "Search";
             this.btn_Search.UseVisualStyleBackColor = true;
             this.btn_Search.Click += new System.EventHandler(this.btn_Search_Click);
             // 
@@ -446,7 +385,6 @@
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.btn_Search);
             this.Controls.Add(this.txt_Search);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.ss_Home);
             this.Controls.Add(this.menu_Home);
             this.Controls.Add(this.p_Home);
@@ -460,7 +398,6 @@
             this.menu_Home.PerformLayout();
             this.ss_Home.ResumeLayout(false);
             this.ss_Home.PerformLayout();
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -490,17 +427,10 @@
         private System.Windows.Forms.ToolStripStatusLabel slblvalue_Home;
         private System.Windows.Forms.ToolStripMenuItem menuItem_ViewProducts;
         private System.Windows.Forms.ToolStripMenuItem menuItem_EditProducts;
-        private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ToolStripMenuItem menuItem_AddNewProducts;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txt_Search;
         private System.Windows.Forms.Button btn_Search;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ColumnHeader lvi_ProductID;
-        private System.Windows.Forms.ColumnHeader lvi_ProductName;
-        private System.Windows.Forms.ColumnHeader lvi_UnitPrice;
-        private System.Windows.Forms.ColumnHeader lvi_Description;
-        private System.Windows.Forms.ColumnHeader lvi_OrderDate;
         private System.Windows.Forms.Label lbl_OrderID;
         private System.Windows.Forms.TextBox txt_H_OrderID;
         private System.Windows.Forms.TextBox txt_H_TotalBill;

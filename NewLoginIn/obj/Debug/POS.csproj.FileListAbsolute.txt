@@ -11,5 +11,7 @@ C:\Users\Arslan Ali\Documents\Visual Studio 2015\Projects\NewLoginIn\NewLoginIn\
 C:\Users\Arslan Ali\Documents\Visual Studio 2015\Projects\NewLoginIn\NewLoginIn\obj\Debug\NewLoginIn.pdb
 C:\Users\Arslan Ali\Documents\Visual Studio 2015\Projects\NewLoginIn\NewLoginIn\obj\Debug\POS.frm_Products.resources
 C:\Users\Arslan Ali\Documents\Visual Studio 2015\Projects\NewLoginIn\NewLoginIn\obj\Debug\POS.frm_ViewProducts.resources
-C:\Users\Arslan Ali\Documents\Visual Studio 2015\Projects\NewLoginIn\NewLoginIn\obj\Debug\POS.csprojResolveAssemblyReference.cache
 C:\Users\Arslan Ali\Documents\Visual Studio 2015\Projects\NewLoginIn\NewLoginIn\obj\Debug\POS.frm_ViewUserLogs.resources
+C:\Users\Arslan Ali\Documents\Visual Studio 2015\Projects\NewLoginIn\NewLoginIn\bin\Debug\MetroFramework.Design.dll
+C:\Users\Arslan Ali\Documents\Visual Studio 2015\Projects\NewLoginIn\NewLoginIn\bin\Debug\MetroFramework.dll
+C:\Users\Arslan Ali\Documents\Visual Studio 2015\Projects\NewLoginIn\NewLoginIn\bin\Debug\MetroFramework.Fonts.dll

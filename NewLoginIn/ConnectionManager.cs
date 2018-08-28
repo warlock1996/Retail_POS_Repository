@@ -26,8 +26,8 @@ namespace POS
         public bool con_Query(string _query)
         {
             SqlCommand scmd = new SqlCommand(_query, sc);
-            int value = scmd.ExecuteNonQuery();
-            if (value > 0)
+            int value_q = scmd.ExecuteNonQuery();
+            if (value_q > 0)
                 return true;
             else
                 return false;
@@ -58,6 +58,12 @@ namespace POS
             else
                 return false;
 
+        }
+        public void con_recordLog(string operation, string user)
+        {
+            string _logquery = "INSERT INTO tbl_userlogs ([Operation],[UserName],[Time]) VALUES ('" + operation + "', '" + user + "','" + DateTime.Now.ToString() + "')";
+            SqlCommand _sclq = new SqlCommand(_logquery, sc);
+            _sclq.ExecuteNonQuery();
         }
 
 

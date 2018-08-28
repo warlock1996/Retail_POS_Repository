@@ -9,12 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Security.Cryptography;
+using MetroFramework.Forms;
 
 namespace POS
 {
-    public partial class LoginForm : Form
+    public partial class LoginForm : MetroForm
     {
-        ConnectionManager con_login_logs = new ConnectionManager();
+        ConnectionManager con_login = new ConnectionManager();
 
         public LoginForm()
         {
@@ -23,11 +24,11 @@ namespace POS
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
-            txt_ConLbl.Text = "Connected";
-            txt_ConLbl.ForeColor = Color.Green;
+            lbl_status.Text = "Connected";
+            lbl_status.ForeColor = Color.Green;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_login_Click(object sender, EventArgs e)
         {
 
             try
@@ -39,8 +40,8 @@ namespace POS
 
                 users newuser = new users(txtUser, txtPwd);
 
-                con_login_logs.con_Open();
-                if (con_login_logs.con_LookUpUsers(users.UserName))
+                con_login.con_Open();
+                if (con_login.con_LookUpUsers(users.UserName))
                 {
                     if (newuser.Validate())
                     {
@@ -48,17 +49,16 @@ namespace POS
                         pb_login.Value += 100;
                         if (pb_login.Value > 99)
                         {
+                            con_login.con_Close();
                             MessageBox.Show("You Are Successfully Logged In !", "Login Succesfull", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             this.Hide();
                             frm_Home myhome = new frm_Home();
                             myhome.Show();
 
-
-                            string log_operation = "Login Attempt (Successfull)";
-                            string login_log = "Insert INTO tbl_userlogs ([Operation],[UserName],[Time]) VALUES ('" + log_operation + "', '" + users.UserName + "','" + DateTime.Now.ToString() + "')";
-                            con_login_logs.con_Open();
-                            con_login_logs.con_Query(login_log);
-                            con_login_logs.con_Close();
+                            con_login.con_Open();
+                            con_login.con_recordLog("Login Attempt (Successfull)", users.UserName);
+                            con_login.con_Close();
+                           
 
                         }
                     }
@@ -69,11 +69,12 @@ namespace POS
                         txtUserName.Text = "";
                         txtPassword.Text = "";
                         txtUserName.Focus();
-                        string log_operation = "Failed Login Attempt";
-                        string login_log = "Insert INTO tbl_userlogs ([Operation],[UserName],[Time]) VALUES ('" + log_operation + "','" + users.UserName + "','" + DateTime.Now.ToString() + "')";
-                        con_login_logs.con_Open();
-                        con_login_logs.con_Query(login_log);
-                        con_login_logs.con_Close();
+
+                        con_login.con_Open();
+                        con_login.con_recordLog("Failed Login Attempt", users.UserName);
+                        con_login.con_Close();
+
+
                     }
                     
                 }
@@ -106,17 +107,21 @@ namespace POS
         private void txtPassword_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyValue == 13)
-                button1.Focus();
+                btn_login.Focus();
         }
-
-        private void txtUserName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
+         private void btn_exit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void lbl_Password_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_UserName_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
